@@ -1,0 +1,210 @@
+[gd_scene load_steps=9 format=3 uid="uid://casumkxb188k5"]
+
+[ext_resource type="Script" path="res://Scripts/quiz.gd" id="1_5huin"]
+[ext_resource type="FontFile" uid="uid://csahcrsc4eshy" path="res://Fonts/crypt-of-tomorrow-ut-font-no-rus.ttf" id="2_usmfm"]
+[ext_resource type="FontFile" uid="uid://0ni3xtjq5btw" path="res://Fonts/Mars_Needs_Cunnilingus.ttf" id="3_ttp31"]
+[ext_resource type="FontFile" uid="uid://b8bgm0msqwdln" path="res://Fonts/hachicro.TTF" id="4_hkyso"]
+[ext_resource type="Texture2D" uid="uid://c7tclunqkcx7h" path="res://Sprites/shuffle.png" id="5_7e0mk"]
+[ext_resource type="Texture2D" uid="uid://fbauwae04qik" path="res://Sprites/star.png" id="6_liy5s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vady"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rbn3"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Quiz" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_5huin")
+
+[node name="BackPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 88.0
+offset_right = 1024.0
+offset_bottom = 280.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vady")
+
+[node name="Answer" type="RichTextLabel" parent="BackPanel"]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 880.0
+offset_bottom = 176.0
+theme_override_fonts/normal_font = ExtResource("3_ttp31")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Benjamin."
+
+[node name="FrontPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3rbn3")
+
+[node name="Title" type="Label" parent="FrontPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_top = -24.0
+offset_right = 896.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("2_usmfm")
+theme_override_font_sizes/font_size = 40
+text = "--- QUIZ ---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quiz" type="Label" parent="FrontPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 880.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("3_ttp31")
+theme_override_font_sizes/font_size = 40
+text = "Benjamin."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Dropdown" type="Button" parent="FrontPanel"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 176.0
+offset_right = 896.0
+offset_bottom = 224.0
+rotation = 1.5708
+theme_override_fonts/font = ExtResource("4_hkyso")
+theme_override_font_sizes/font_size = 30
+text = ">"
+flat = true
+
+[node name="QuizNumber" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("3_ttp31")
+theme_override_font_sizes/font_size = 40
+text = "1/10"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 188.0
+offset_right = -32.0
+offset_bottom = 252.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_hkyso")
+theme_override_font_sizes/font_size = 30
+text = "NEXT"
+flat = true
+
+[node name="Previous" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 188.0
+offset_right = 249.0
+offset_bottom = 252.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_hkyso")
+theme_override_font_sizes/font_size = 30
+text = "PREVIOUS"
+flat = true
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -72.0
+offset_right = 64.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_hkyso")
+theme_override_font_sizes/font_size = 30
+text = "EXIT"
+flat = true
+
+[node name="Reshuffle" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 56.0
+offset_right = 1032.0
+offset_bottom = 104.0
+texture_normal = ExtResource("5_7e0mk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Star" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 184.0
+offset_right = 1008.0
+offset_bottom = 224.0
+texture_normal = ExtResource("6_liy5s")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="LanguageOption" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 200.0
+offset_right = 312.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_usmfm")
+item_count = 4
+selected = 0
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Chinese"
+popup/item_1/id = 1
+popup/item_2/text = "Melayu"
+popup/item_2/id = 2
+popup/item_3/text = "Tamil"
+popup/item_3/id = 3
+
+[connection signal="pressed" from="FrontPanel/Dropdown" to="." method="dropdown"]
+[connection signal="pressed" from="Next" to="." method="next"]
+[connection signal="pressed" from="Previous" to="." method="previous"]
+[connection signal="pressed" from="Exit" to="." method="exit"]
+[connection signal="pressed" from="Reshuffle" to="." method="generate_quiz"]
+[connection signal="pressed" from="Star" to="." method="star"]
+[connection signal="item_selected" from="LanguageOption" to="." method="toggle_language"]

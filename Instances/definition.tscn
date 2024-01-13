@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ek66peiibjd"]
+
+[ext_resource type="FontFile" uid="uid://0ni3xtjq5btw" path="res://Fonts/Mars_Needs_Cunnilingus.ttf" id="1_6qafl"]
+
+[node name="Definition" type="Button"]
+texture_filter = 1
+theme_override_fonts/font = ExtResource("1_6qafl")
+theme_override_font_sizes/font_size = 30
+text = "1. Hello World!
+"
+flat = true
+alignment = 0
